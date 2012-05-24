@@ -54,8 +54,8 @@ b2g-scripts cmd goUrl http://google.com
 
 Reloads currently running app.
 
-*warning* this is bound to the current implementation
-of gaia and _will_ break if that implementation changes.
+**_WARNING_** this is bound to the current implementation
+of gaia and will break if that implementation changes.
 
 ```` sh
 b2g-scripts reload-app
