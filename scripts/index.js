@@ -2,5 +2,6 @@ module.exports = {
   'cmd': require('./cmd'),
   'reload-app': require('./reload-app'),
   'watch': require('./watch'),
-  'hosts': require('./hosts')
+  'hosts': require('./hosts'),
+  'server': require('./server')
 };

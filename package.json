@@ -26,7 +26,8 @@
     "test-agent": "0.5.1",
     "marionette-client": "0.3.0",
     "match-files": "~0.1",
-    "optimist": "0.3.4"
+    "optimist": "0.3.4",
+    "node-static": "0.5.9"
   },
 
   "devDependencies": {
