@@ -32,6 +32,8 @@ var cmd = require('../lib/script')({
     process.exit(1);
   }
 
+  output += argv.ip + ' ' + argv.domain + '\n';
+
   //don't care about performance
   dirs = fs.readdirSync(gaiaPath);
 
