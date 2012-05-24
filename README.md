@@ -58,5 +58,5 @@ Reloads currently running app.
 of gaia and _will_ break if that implementation changes.
 
 ```` sh
-b2g-scripts cmd reload-app
+b2g-scripts reload-app
 ````
