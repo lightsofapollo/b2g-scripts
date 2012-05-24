@@ -60,3 +60,20 @@ of gaia and will break if that implementation changes.
 ```` sh
 b2g-scripts reload-app
 ````
+
+### b2g-scripts hosts
+
+Output hostfile definition to add to /etc/hosts
+
+```` sh
+b2g-scripts hosts --gaia $GAIA_DIR --ip 127.0.0.1
+````
+
+### b2g-scripts server
+
+Starts http server. Faster then HTTPD but designed
+for use with the emulator/phone.
+
+```` sh
+b2g-scripts server --gaia $GAIA_DIR --port 8081
+````
