@@ -1,8 +1,8 @@
 {
   "name": "b2g-gaia",
   "version": "0.0.1",
-  "author": "",
-  "description": "",
+  "author": "James Lal <jlal@mozilla.com>",
+  "description": "B2G/Gaia Helper Scripts",
   "main": "lib/index.js",
   "preferGlobal": true,
 
@@ -12,11 +12,14 @@
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/.git"
+    "url": "git://github.com/lightsofapollo/b2g-scripts.git"
   },
 
   "keywords": [
-    ""
+    "b2g",
+    "cli",
+    "gaia",
+    "tools"
   ],
 
   "dependencies" : {
