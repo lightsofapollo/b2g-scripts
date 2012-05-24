@@ -1,0 +1,36 @@
+{
+  "name": "b2g-gaia",
+  "version": "0.0.1",
+  "author": "",
+  "description": "",
+  "main": "lib/index.js",
+  "preferGlobal": true,
+
+  "bin": {
+    "b2g-gaia": "bin/b2g-gaia"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/.git"
+  },
+
+  "keywords": [
+    ""
+  ],
+
+  "dependencies" : {
+    "test-agent": "0.5.1",
+    "marionette-client": "0.3.0",
+    "match-files": "~0.1",
+    "optimist": "0.3.4"
+  },
+
+  "devDependencies": {
+  },
+
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.4"
+  }
+}
