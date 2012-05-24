@@ -2,10 +2,11 @@ var Watcher = require('../lib/script')({
 
   desc: [
     'Watch a directory, run a script when a file changes.',
-    'files ending with .js,.css,.html,.properties files are watched'
+    //indent is intentional for output
+    '            Files ending with .js,.css,.html,.properties files are watched.'
   ].join('\n'),
 
-  usage: 'watch --path $PWD "b2g-gaia reload-app"',
+  usage: 'watch --path $PWD "b2g-scripts reload-app"',
 
   options: {
     'path': {

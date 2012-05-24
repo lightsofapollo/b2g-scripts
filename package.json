@@ -1,5 +1,5 @@
 {
-  "name": "b2g-gaia",
+  "name": "b2g-scripts",
   "version": "0.0.1",
   "author": "James Lal <jlal@mozilla.com>",
   "description": "B2G/Gaia Helper Scripts",
@@ -7,7 +7,7 @@
   "preferGlobal": true,
 
   "bin": {
-    "b2g-gaia": "bin/b2g-gaia"
+    "b2g-scripts": "bin/b2g-scripts"
   },
 
   "repository": {
