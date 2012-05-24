@@ -1,6 +1,6 @@
 # B2G Scripts
 
-Contains a single cli script - `b2g-gaia` with a growing number of subcommands.
+Contains a single cli script - `b2g-scripts` with a growing number of subcommands.
 
 In general it is assumed you have a working b2g emulator/desktop/phone with 
 marionette turned on and listening on port 2828.
@@ -39,7 +39,7 @@ Executes a cli command. You can use this to chain other sub commands.
 ```` sh
 # I use this all the time to reload app when I am making rapid
 # html/css changes
-b2g-scripts watch "b2g-gaia reload-app"
+b2g-scripts watch "b2g-scripts reload-app"
 ````
 
 ### b2g-scripts cmd
