@@ -1,5 +1,5 @@
 var WAIT_FOR = 'from',
-    INCREMENTS = 75,
+    NEXT_TICK = 75,
     WaitForMarionette,
     net = require('net');
 
@@ -22,9 +22,8 @@ WaitForMarionette = require('../lib/script')({
 
 }, function(argv) {
   var socket,
-      tries = 0,
       buffer = '',
-      max = Math.ceil(argv.timeout / INCREMENTS);
+      stopAt = (Date.now() + parseInt(argv.timeout));
 
 
   function sendFail() {
@@ -44,7 +43,7 @@ WaitForMarionette = require('../lib/script')({
   }
 
   function tryConnect() {
-    if(tries >= max) {
+    if(Date.now() > stopAt) {
       sendFail();
     }
 
@@ -58,10 +57,9 @@ WaitForMarionette = require('../lib/script')({
     }
 
     function onError() {
-      tries++;
       socket.removeListener('connect', onConnect);
       socket.removeListener('data', onData);
-      setTimeout(tryConnect, INCREMENTS);
+      setTimeout(tryConnect, NEXT_TICK);
     }
 
     function onConnect() {
