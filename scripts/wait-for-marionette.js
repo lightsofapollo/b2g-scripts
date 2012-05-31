@@ -84,5 +84,3 @@ WaitForMarionette = require('../lib/script')({
 });
 
 module.exports = WaitForMarionette;
-
-
