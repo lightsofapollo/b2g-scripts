@@ -34,6 +34,7 @@ WaitForMarionette = require('../lib/script')({
 
   function checkBuffer() {
     if(buffer.indexOf(WAIT_FOR) !== -1) {
+      //make sure socket closes cleanly
       socket.on('close', function() {
         console.log('-- marionette is ready --')
         process.exit(0);
