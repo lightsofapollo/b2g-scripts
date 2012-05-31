@@ -15,7 +15,7 @@ WaitForMarionette = require('../lib/script')({
     },
 
     timeout: {
-      desc: 'max wait time in seconds',
+      desc: 'max wait time milliseconds',
       default: 2000
     }
   }
