@@ -1,8 +1,9 @@
 var WAIT_FOR = 'from',
     INCREMENTS = 75,
+    WaitForMarionette,
     net = require('net');
 
-var Server = require('../lib/script')({
+WaitForMarionette = require('../lib/script')({
   desc: 'Waits until a marionette port is ready',
   usage: 'wait-for-marionette [--port 2828] [--timeout 2000]',
 
@@ -82,6 +83,6 @@ var Server = require('../lib/script')({
 
 });
 
-module.exports = Server;
+module.exports = WaitForMarionette;
 
 
