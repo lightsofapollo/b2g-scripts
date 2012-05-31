@@ -72,6 +72,12 @@ WaitForMarionette = require('../lib/script')({
     socket.once('error', onError);
   }
 
+  /**
+   * Tries to open a connection to the
+   * socket. If the connection fails
+   * to open try again in INCREMENTS
+   * number of ms
+   */
   tryConnect();
 
 });
