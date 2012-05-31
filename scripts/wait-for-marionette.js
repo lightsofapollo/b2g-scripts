@@ -42,7 +42,7 @@ WaitForMarionette = require('../lib/script')({
     }
   }
 
-  function tryConnect(cb) {
+  function tryConnect() {
     if(tries >= max) {
       sendFail();
     }
@@ -60,26 +60,19 @@ WaitForMarionette = require('../lib/script')({
       tries++;
       socket.removeListener('connect', onConnect);
       socket.removeListener('data', onData);
-      setTimeout(tryConnect, INCREMENTS, cb);
+      setTimeout(tryConnect, INCREMENTS);
     }
 
     function onConnect() {
       socket.removeListener('error', onError);
-      cb(socket);
     }
 
     socket.on('data', onData);
     socket.once('connect', onConnect);
     socket.once('error', onError);
-
   }
 
-  tryConnect(function(socket) {
-    timeout = ((max - tries) * INCREMENTS);
-    setTimeout(sendFail, timeout);
-
-    checkBuffer();
-  });
+  tryConnect();
 
 });
 
