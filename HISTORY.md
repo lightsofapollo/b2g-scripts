@@ -1,3 +1,8 @@
+# 0.2.0
+
+  * Added wait-for-marionette command waits until marionette socket is
+    ready and open for use.
+
 # 0.1.0
 
 New Commands
