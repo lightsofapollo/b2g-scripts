@@ -20,12 +20,15 @@ var Server = require('../lib/script')({
 
   var static = require('node-static'),
       fsPath = require('path'),
-      fs = require('fs');
+      fs = require('fs'),
+      port = parseInt(argv.port.toString().replace(/[^0-9]/g, ''));
 
   if (!fsPath.existsSync(argv.gaia)) {
     console.error('Invalid path: ', argv.gaia);
     this.help(1);
   }
+
+  console.log(port);
 
   var apps = fs.readdirSync(fsPath.join(argv.gaia, 'apps'));
   var file = new(static.Server)(argv.gaia);
@@ -44,7 +47,7 @@ var Server = require('../lib/script')({
             file.serve(request, response);
           }
       });
-  }).listen(argv.port);
+  }).listen(port);
 
 });
 

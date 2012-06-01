@@ -1,6 +1,6 @@
 {
   "name": "b2g-scripts",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "James Lal <jlal@mozilla.com>",
   "description": "B2G/Gaia Helper Scripts",
   "main": "lib/index.js",

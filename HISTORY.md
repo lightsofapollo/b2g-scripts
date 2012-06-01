@@ -1,3 +1,6 @@
+# 0.2.1
+  * server's port option can now handle :7777 as a port.
+
 # 0.2.0
 
   * Added wait-for-marionette command waits until marionette socket is
