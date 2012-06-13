@@ -1,3 +1,6 @@
+# 0.3.0
+  * server can now accept multiple app directories to serve from.
+
 # 0.2.1
   * server's port option can now handle :7777 as a port.
 
