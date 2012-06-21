@@ -16,6 +16,11 @@ var Server = require('../lib/script')({
       demand: true
     },
 
+    forward: {
+      alias: 'f',
+      desc: 'Forward all paths without extension to index.html'
+    },
+
     port: {
       alias: 'p',
       desc: 'port to use',
@@ -79,7 +84,12 @@ var Server = require('../lib/script')({
             app = host.split('.')[0];
 
           if(apps[app]) {
-            request.url = fsPath.join('/' + apps[app], app, request.url);
+            if(argv.forward && !request.url.match(/\.[a-zA-Z9-9]+$/)) {
+              request.url = fsPath.join('/' + apps[app], app, 'index.html');
+            } else {
+              request.url = fsPath.join('/' + apps[app], app, request.url);
+            }
+
             file.serve(
               request, response
             );
