@@ -27,7 +27,7 @@ var cmd = require('../lib/script')({
       gaiaPath = path.join(argv.gaia, 'apps'),
       output = "# GAIA : " + argv.domain + ' / ' + argv.ip + '\n';
 
-  if (!path.existsSync(gaiaPath)) {
+  if (!fs.existsSync(gaiaPath)) {
     console.error('"' + argv.gaia + '"', 'is not a valid path');
     process.exit(1);
   }
