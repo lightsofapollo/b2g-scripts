@@ -78,13 +78,15 @@ var Server = require('../lib/script')({
     console.log('SERVE: ' + key + ' from  appdir: '  + apps[key]);
   }
 
+  var HAS_EXTENSION = /\.[a-zA-Z9-9]+(\?(.*))?$/
+
   require('http').createServer(function (request, response) {
       request.addListener('end', function () {
         var host = request.headers.host,
             app = host.split('.')[0];
 
           if(apps[app]) {
-            if(argv.forward && !request.url.match(/\.[a-zA-Z9-9]+$/)) {
+            if(argv.forward && !HAS_EXTENSION.test(request.url)) {
               request.url = fsPath.join('/' + apps[app], app, 'index.html');
             } else {
               request.url = fsPath.join('/' + apps[app], app, request.url);
