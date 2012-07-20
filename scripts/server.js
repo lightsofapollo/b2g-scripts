@@ -79,25 +79,23 @@ var Server = require('../lib/script')({
   }
 
   var HAS_EXTENSION = /\.[a-zA-Z9-9]+(\?(.*))?$/
+  var SHARED = /^\/?shared/
 
   require('http').createServer(function (request, response) {
       request.addListener('end', function () {
-        var host = request.headers.host,
-            app = host.split('.')[0];
+        var host = request.headers.host;
+        var app = host.split('.')[0];
 
-          if(apps[app]) {
-            if(argv.forward && !HAS_EXTENSION.test(request.url)) {
-              request.url = fsPath.join('/' + apps[app], app, 'index.html');
-            } else {
-              request.url = fsPath.join('/' + apps[app], app, request.url);
-            }
-
-            file.serve(
-              request, response
-            );
+        if(apps[app] && !SHARED.test(request.url)) {
+          var url;
+          if(argv.forward && !HAS_EXTENSION.test(request.url)) {
+            request.url = fsPath.join('/' + apps[app], app, 'index.html');
           } else {
-            file.serve(request, response);
+            request.url = fsPath.join('/' + apps[app], app, request.url);
           }
+        }
+
+        file.serve(request, response);
       });
   }).listen(port);
 
