@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/lightsofapollo/b2g-scripts.png)](http://travis-ci.org/lightsofapollo/b2g-scripts)
 # B2G Scripts
 
 Contains a single cli script - `b2g-scripts` with a growing number of subcommands.
