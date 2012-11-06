@@ -5,7 +5,7 @@ Contains a single cli script - `b2g-scripts` with a growing number of subcommand
 In general it is assumed you have a working b2g emulator/desktop/phone with 
 marionette turned on and listening on port 2828.
 
-Commands like reload-app are not going to be useful if your not in DEBUG mode
+Commands like reload-app are not going to be useful if you're not in DEBUG mode
 (everything is in offline cache).
 
 ## Install
