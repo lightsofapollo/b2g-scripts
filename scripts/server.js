@@ -71,7 +71,11 @@ var Server = require('../lib/script')({
   });
 
 
-  var file = new(static.Server)(argv.gaia);
+  var file = new(static.Server)(argv.gaia, {
+    cache: false,
+    headers: { 'Cache-Control': 'no-cache' }
+  });
+
   var key;
 
   for(key in apps) {
